@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+group 'dev.codestijl'
+version '1.0.0'
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'dev.codestijl.example.optional.OptionalOrElseExample'
+        )
+    }
+}
